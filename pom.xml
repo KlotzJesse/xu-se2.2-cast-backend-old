@@ -9,9 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xu.se22</groupId>
+<<<<<<< HEAD
     <artifactId>castbackend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>castbackend</name>
+=======
+    <artifactId>cast-backend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>cast-backend</name>
+>>>>>>> 4569c2a4674deb3f67a9af6e1be4bee827a08965
     <description>CAST Backend</description>
     <properties>
         <java.version>11</java.version>
@@ -19,19 +25,25 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+=======
+>>>>>>> 4569c2a4674deb3f67a9af6e1be4bee827a08965
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
+<<<<<<< HEAD
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
+=======
+>>>>>>> 4569c2a4674deb3f67a9af6e1be4bee827a08965
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
