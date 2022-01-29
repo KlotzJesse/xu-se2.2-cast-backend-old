@@ -10,3 +10,25 @@ Project Scope:
   - Management Dashboard
   - Lecturer Dashboard
   - Lecturer List
+
+Tech Stack:
+- Frontend technologies
+  - Next.js as overall framework
+  - Chakra UI and Next UI
+  - Chart.js
+  - 
+
+- Backend technologies
+  - Maven with Java
+  - Spring
+  - 
+
+- DevOps and CI/CD
+  - Maven
+  - Jenkins
+  - 
+
+
+- Prototyping
+  - Figma 
+
