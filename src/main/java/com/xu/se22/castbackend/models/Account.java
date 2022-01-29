@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -26,5 +27,11 @@ public class Account {
     private int PublicationsBeforeUni;
     @Column(name = "academicemployment")
     private String AcademicEmployment;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Project> projects;
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Publication> publications;
 
 }
