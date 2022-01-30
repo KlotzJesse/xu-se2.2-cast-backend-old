@@ -38,7 +38,7 @@ public class Account {
     private Set<Publication> publications;
 
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Handin> handins;
 

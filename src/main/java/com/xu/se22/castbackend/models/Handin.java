@@ -25,6 +25,7 @@ public class Handin {
     @JoinColumn(name = "accountid", nullable = false)
     private Account account;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "project", nullable = true)
     private Project project;
