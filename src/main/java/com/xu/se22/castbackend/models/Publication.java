@@ -1,5 +1,6 @@
 package com.xu.se22.castbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ public class Publication {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int PublicationID;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "accountid", nullable = false)
     private Account account;

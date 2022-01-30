@@ -29,13 +29,14 @@ public class Account {
     @Column(name = "academicemployment")
     private String AcademicEmployment;
 
-    @JsonIgnore
+
+
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Project> projects;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Publication> publications;
+
 
     @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
