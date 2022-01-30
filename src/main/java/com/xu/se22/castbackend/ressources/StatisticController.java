@@ -23,10 +23,13 @@ public class StatisticController {
 
     @GetMapping(path = "/projects")
     public @ResponseBody
-    long getNumberOfProjectsOrByDepartment(@RequestParam(required = false) String department) {
+    long getNumberOfProjectsOrByDepartment(@RequestParam(required = false) String department, @RequestParam(required = false) String accountId) {
         if(department == null)
             projectRepository.count();
-        return projectRepository.countDepartment(department);
+
+        if(accountId == null)
+            projectRepository.countDepartment(department);
+        return projectRepository.countDepartmentByAccountId(department, accountId);
     }
 
     @GetMapping(path = "/publications")
