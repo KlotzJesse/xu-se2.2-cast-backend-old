@@ -1,5 +1,6 @@
 package com.xu.se22.castbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,10 +29,16 @@ public class Account {
     @Column(name = "academicemployment")
     private String AcademicEmployment;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Project> projects;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Publication> publications;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Handin> handins;
 
 }

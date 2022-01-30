@@ -1,5 +1,6 @@
 package com.xu.se22.castbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -17,6 +19,7 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ProjectID;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "accountid", nullable = false)
     private Account account;
@@ -41,5 +44,9 @@ public class Project {
     private String PrincipleResponsible;
     @Column(name = "previousscientificoutput")
     private String PreviousScientificOutput;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Handin> handins;
 
 }

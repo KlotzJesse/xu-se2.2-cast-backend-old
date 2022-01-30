@@ -6,11 +6,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+@Entity(name = "publications")
 public class Publication {
 
     @Id
@@ -21,7 +22,12 @@ public class Publication {
     private Account account;
     private String Name;
     private int Year;
+    @Column(name = "topfive")
     private boolean TopFive;
+    @Column(name = "publicationindex")
     private String PublicationIndex;
+
+    @OneToMany(mappedBy = "publication", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Handin> handins;
 
 }
